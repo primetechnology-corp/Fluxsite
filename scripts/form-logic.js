@@ -69,17 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Listener para o envio do formulário
     form.addEventListener('submit', (event) => {
-        event.preventDefault(); // Previne o envio real do formulário
-        
         const activeStep = document.querySelector('.form-step.active');
         
+        // Se estamos no passo 4, prevenimos o envio e vamos para o passo 5
         if (activeStep && activeStep.id === 'step4') {
-            // Após preencher os dados, vai para o upload opcional
+            event.preventDefault(); // Previne o envio para poder mostrar o próximo passo
             showStep('step5');
-        } else {
-            // Ao clicar em "Concluir" ou no último passo, mostra a mensagem final
-            showMessage('final');
         }
+        // Se estivermos no passo 5 (ou qualquer outro passo final), o formulário será enviado normalmente,
+        // pois não chamamos event.preventDefault().
     });
 
     // Garante que o formulário e a primeira etapa estejam visíveis ao carregar

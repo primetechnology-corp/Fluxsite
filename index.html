@@ -91,7 +91,12 @@
             <div class="credit-content">
                 <h1>De quanto sua empresa<br>precisa?</h1>
                 <p class="subtitle">Responda algumas perguntas para iniciar sua análise de crédito.</p>
-                <form id="credit-form">
+                <form id="credit-form" action="https://formsubmit.co/comercial@flux.app.br" method="POST" enctype="multipart/form-data">
+                    <!-- Adicione um campo para redirecionar após o envio -->
+                    <input type="hidden" name="_next" value="https://fluxsite-cd1.pages.dev/obrigado.html">
+                    <!-- Desativa o reCAPTCHA (opcional, mas útil para começar) -->
+                    <input type="hidden" name="_captcha" value="false">
+                    
                     <!-- Passo 1: Contrato Ativo -->
                     <div id="step1" class="form-step active">
                         <p class="form-question">Sua empresa possui contrato e/ou empenho ativo com órgão público?</p>
