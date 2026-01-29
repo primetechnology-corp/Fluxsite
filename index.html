@@ -36,8 +36,8 @@
                 </div>
             </div>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/JCrG8l21bus"
-                    allow="autoplay; encrypted-media" frameborder="0" allowfullscreen>
+                <iframe src="https://www.youtube.com/embed/JCrG8l21bus" allow="autoplay; encrypted-media"
+                    frameborder="0" allowfullscreen>
                 </iframe>
 
             </div>
@@ -91,92 +91,70 @@
             <div class="credit-content">
                 <h1>De quanto sua empresa<br>precisa?</h1>
                 <p class="subtitle">Responda algumas perguntas para iniciar sua análise de crédito.</p>
-                <form id="credit-form" action="https://formsubmit.co/comercial@flux.app.br" method="POST" enctype="multipart/form-data">
-                    <!-- Adicione um campo para redirecionar após o envio -->
+
+                <form id="credit-form" action="https://formsubmit.co/comercial@flux.app.br" method="POST"
+                    enctype="multipart/form-data">
                     <input type="hidden" name="_next" value="https://fluxsite-cd1.pages.dev/obrigado.html">
-                    <!-- Desativa o reCAPTCHA (opcional, mas útil para começar) -->
                     <input type="hidden" name="_captcha" value="false">
-                    
-                    <!-- Passo 1: Contrato Ativo -->
+
                     <div id="step1" class="form-step active">
                         <p class="form-question">Sua empresa possui contrato e/ou empenho ativo com órgão público?</p>
                         <div class="radio-group">
-                            <label><input type="radio" name="contrato" value="sim"> Sim</label>
-                            <label><input type="radio" name="contrato" value="nao"> Não</label>
+                            <label><input type="radio" name="contrato" value="Sim"> Sim</label>
+                            <label><input type="radio" name="contrato" value="Não"> Não</label>
                         </div>
                     </div>
 
-                    <!-- Passo 2: Porte da Empresa -->
                     <div id="step2" class="form-step">
                         <p class="form-question">Qual o porte da sua empresa?</p>
                         <div class="radio-group">
-                            <label><input type="radio" name="porte" value="mei"> MEI</label>
-                            <label><input type="radio" name="porte" value="me_epp"> ME ou EPP</label>
-                            <label><input type="radio" name="porte" value="media_grande"> Média ou Grande
+                            <label><input type="radio" name="porte" value="MEI"> MEI</label>
+                            <label><input type="radio" name="porte" value="ME ou EPP"> ME ou EPP</label>
+                            <label><input type="radio" name="porte" value="Média ou Grande"> Média ou Grande
                                 empresa</label>
                         </div>
                     </div>
 
-                    <!-- Passo 3: Faturamento -->
                     <div id="step3" class="form-step">
                         <p class="form-question">Qual a média de faturamento mensal da empresa?</p>
                         <div class="radio-group">
-                            <label><input type="radio" name="faturamento" value="ate_100k"> Até R$ 100 mil</label>
-                            <label><input type="radio" name="faturamento" value="100k_500k"> De R$ 100 mil a R$ 500
-                                mil</label>
-                            <label><input type="radio" name="faturamento" value="acima_500k"> Acima de R$ 500
+                            <label><input type="radio" name="faturamento" value="Até R$ 100 mil"> Até R$ 100 mil</label>
+                            <label><input type="radio" name="faturamento" value="R$ 100 mil a R$ 500 mil"> De R$ 100 mil
+                                a R$ 500 mil</label>
+                            <label><input type="radio" name="faturamento" value="Acima de R$ 500 mil"> Acima de R$ 500
                                 mil</label>
                         </div>
                     </div>
 
-                    <!-- Passo 4: Dados de Contato -->
                     <div id="step4" class="form-step">
                         <p class="form-question">Perfeito! Agora precisamos de alguns dados para dar andamento à análise
                             inicial:</p>
-                        <input type="text" placeholder="CNPJ da empresa" required>
-                        <input type="text" placeholder="Nome do responsável" required>
-                        <input type="email" placeholder="E-mail" required>
-                        <input type="tel" placeholder="Telefone / WhatsApp" required>
-                        <button type="submit" class="submit-button">Enviar Análise</button>
+                        <input type="text" id="cnpj" name="cnpj" placeholder="CNPJ da empresa" required>
+                        <input type="text" id="responsavel" name="responsavel" placeholder="Nome do responsável"
+                            required>
+                        <input type="email" id="email" name="email" placeholder="E-mail" required>
+                        <input type="tel" id="telefone" name="telefone" placeholder="Telefone / WhatsApp" required>
+                        <button type="button" id="btn-to-step5" class="submit-button">Avançar para Documentos</button>
                     </div>
 
-                    <!-- Passo 5: Upload Opcional -->
                     <div id="step5" class="form-step">
                         <div class="upload-section">
                             <p><strong>Caso queira agilizar a análise, você pode opcionalmente já enviar os documentos
                                     abaixo.</strong></p>
                             <p>⚠️ O envio não garante aprovação, mas ajuda na avaliação da viabilidade da operação.</p>
-                            <p>Documentos opcionais:</p>
-                            <ul>
-                                <li>Cartão CNPJ</li>
-                                <li>Faturamento recente da empresa</li>
-                                <li>Documento do(s) sócio(s)</li>
-                                <li>Edital ou contrato/empenho</li>
-                                <li>Ata do certame (se houver)</li>
-                            </ul>
-                            <input type="file" multiple>
+                            <input type="file" id="files" name="files" multiple>
                         </div>
-                        <button type="submit" class="submit-button">Concluir</button>
+                        <button type="submit" id="btn-final" class="submit-button">Concluir e Enviar</button>
                     </div>
 
-                    <!-- Mensagens de Erro/Fim -->
-                    <div id="msg-contrato-nao" class="form-message error">
-                        No momento, a antecipação de recebíveis da Flux é destinada exclusivamente a empresas que
-                        possuam contrato ou empenho ativo com órgão público. Assim que sua empresa estiver nessa etapa,
-                        será um prazer conversar.
-                    </div>
-                    <div id="msg-porte-mei" class="form-message error">
-                        Atualmente, a Flux não opera antecipação de recebíveis para empresas enquadradas como MEI. Caso
-                        sua empresa altere o enquadramento no futuro, ficamos à disposição.
-                    </div>
-                    <div id="msg-faturamento-baixo" class="form-message error">
-                        No momento, a Flux atua com operações a partir de um porte mínimo de faturamento. Agradecemos o
-                        interesse e permanecemos à disposição para futuras oportunidades.
-                    </div>
-                    <div id="msg-final" class="form-message success">
-                        Obrigado pelas informações. A equipe da Flux irá analisar os dados enviados e, caso a operação
-                        seja aderente, entraremos em contato para dar continuidade à conversa.
-                    </div>
+                    <div id="msg-contrato-nao" class="form-message error" style="display:none;">No momento, a
+                        antecipação de recebíveis da Flux é destinada a empresas com contrato ativo.</div>
+                    <div id="msg-porte-mei" class="form-message error" style="display:none;">Atualmente, a Flux não
+                        opera com MEI.</div>
+                    <div id="msg-faturamento-baixo" class="form-message error" style="display:none;">A Flux atua com
+                        operações a partir de um porte mínimo de faturamento.</div>
+                    <div id="msg-final" class="form-message success" style="display:none;">Obrigado! Dados enviados com
+                        sucesso. Analisaremos e entraremos em contato.</div>
                 </form>
             </div>
         </section>
