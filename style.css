@@ -416,6 +416,125 @@ footer {
       transform: rotate(45deg);
 }
 
+.antecipa-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 150px;
+    /* background-color: #f0f2f5; */
+    gap: 50px;
+}
+
+.antecipa-image {
+    flex: 1;
+}
+
+.antecipa-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.antecipa-content {
+    flex: 1;
+    text-align: left;
+}
+
+.antecipa-content h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+.saiba-mais-button {
+    background-color: #E91E63;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.antecipa-page-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 150px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.antecipa-page-content .antecipa-page-logo {
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.antecipa-page-content h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.antecipa-page-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #666;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.benefits-section {
+    padding: 50px 150px;
+    background-color: #fff;
+}
+
+
+.benefits-section h2 {
+    font-size: 2em;
+    color: #333; 
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.benefits-list li {
+    font-size: 1.1em;
+    color: #666; 
+    line-height: 1.6;
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.benefits-list li:before {
+    content: '✓';
+    color: #E91E63;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.faq-section {
+    padding: 50px 150px;
+    background-color: #fff; 
+}
+
+.faq-section h2 {
+    font-size: 2em;
+    /* color: #333; */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
 /* Estilos da Página de Agradecimento */
 .thank-you-body {
     height: 100vh;
